@@ -12,15 +12,15 @@ public class SeedDatabase {
 
     @Bean
     // CommandLineRunner - Spring Boot Runs all Beans at startup
-    public CommandLineRunner initDB(EmployeeRepository emprepos)
+    public CommandLineRunner initDB(DogRepository repo)
     {
         return args ->
         {
-            log.info("Seeding " + emprepos.save(new Dogs("Springer", 50, false)));
-            log.info("Seeding " + emprepos.save(new Dogs("Bulldog", 50, true)));
-            log.info("Seeding " + emprepos.save(new Dogs("Collie", 50, false)));
-            log.info("Seeding " + emprepos.save(new Dogs("Boston Terrie", 35, true)));
-            log.info("Seeding " + emprepos.save(new Dogs("Corgie", 35, true)));
+            log.info("Seeding " + repo.save(new Dogs("Springer", 50, false)));
+            log.info("Seeding " + repo.save(new Dogs("Bulldog", 50, true)));
+            log.info("Seeding " + repo.save(new Dogs("Collie", 50, false)));
+            log.info("Seeding " + repo.save(new Dogs("Boston Terrie", 35, true)));
+            log.info("Seeding " + repo.save(new Dogs("Corgie", 35, true)));
         };
     }
 }
